@@ -48,11 +48,13 @@ app.get("/total", (req, res) => {
   res.send({ total, count: expenses.length });
 });
 
-app.use(auth());
 
 app.get("/reports", (req, res) => {
   res.send(expenses);
 });
+
+app.use(auth());
+
 
 createServer(app).listen(PORT, () => {
   console.log(`API: ${APP_URL}`);
