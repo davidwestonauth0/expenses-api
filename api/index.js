@@ -43,7 +43,7 @@ app.get("/", (req, res) => {
 });
 
 app.post('/login', function(req, res, next) {
-    res.redirect(303, 'https://dev-huv4lcmy.eu.auth0.com/authorize?client_id=Gxp1SrCkmKyzQ463pVV9IeXj2xYQ01Qd&redirect_uri=https%3A%2F%2Fsingle-page-app-git-master-davidwestonauth0.vercel.app&audience=https%3A%2F%2Fexpenses-api&scope=openid%20profile%20email%20read%3Areports&response_type=code&response_mode=query&state=WGhrbk1rVEN1aFJNY1l5LVo1SWZ0T2NRRnNkUi5PeV9Fal9DTDZocWRJRw%3D%3D&nonce=RX42a2phSEFSLmF0cDBLQ2ZzOWgxQVJlY25VbloyYkEwVlZBdUNnTC1xRA%3D%3D&code_challenge=S_T2RJb08wEst6eicPoUdTRPwqiF_FEDnkcU8exE_KA&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjEuMTMuNSJ9&login_hint=davidweston.uk@googlemail.com&connection=google-oauth2') // Notice the 303 parameter
+    res.redirect(303, 'https://dev-huv4lcmy.eu.auth0.com/authorize?client_id=Gxp1SrCkmKyzQ463pVV9IeXj2xYQ01Qd&redirect_uri=https%3A%2F%2Fsingle-page-app-git-master-davidwestonauth0.vercel.app&audience=https%3A%2F%2Fexpenses-api&scope=openid%20profile%20email%20read%3Areports&response_type=code&response_mode=query&state=WGhrbk1rVEN1aFJNY1l5LVo1SWZ0T2NRRnNkUi5PeV9Fal9DTDZocWRJRw&nonce=RX42a2phSEFSLmF0cDBLQ2ZzOWgxQVJlY25VbloyYkEwVlZBdUNnTC1xRA&code_challenge=S_T2RJb08wEst6eicPoUdTRPwqiF_FEDnkcU8exE_KA&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjEuMTMuNSJ9&login_hint=davidweston.uk@googlemail.com&connection=google-oauth2') // Notice the 303 parameter
 })
 /****************************/
 
