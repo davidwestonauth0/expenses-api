@@ -47,9 +47,14 @@ app.get("/", (req, res) => {
 
 app.post('/login', function(req, res, next) {
   
-    const bodyParser = require('body-parser');
-    app.use(bodyParser.urlencoded({ extended: true }));
-  console.log(req.body);
+var bodyParser = require('body-parser');
+var multer = require('multer');
+var upload = multer();
+
+// for parsing multipart/form-data
+app.use(upload.array()); 
+app.use(express.static('public'));
+console.log(req.body);
     //var jwt = req.body.credential;
     //console.log(jwt);
  
