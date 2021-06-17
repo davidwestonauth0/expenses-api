@@ -45,11 +45,13 @@ app.get("/", (req, res) => {
   res.status(200).end("OK");
 });
 
+app.use(express.urlencoded({
+  extended: true
+}))
+
 app.post('/login', function(req, res, next) {
   
-  app.use(express.urlencoded({
-    extended: true
-  }))
+  console.log(req);
   console.log(req.body);
     //var jwt = req.body.credential;
     //console.log(jwt);
