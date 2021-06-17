@@ -52,6 +52,7 @@ app.post('/login', function(req, res, next) {
   //console.log(req.body.credential);
    var jwt = req.body.credential;
    console.log(jwt);
+  console.log(parseJwt(jwt));
  
 //var decoded = jwt_decode(jwt);
 //console.log(decoded)
@@ -75,3 +76,13 @@ app.get("/reports", requiredScopes('read:reports'), (req, res) => {
 createServer(app).listen(PORT, () => {
   console.log(`API: ${APP_URL}`);
 });
+
+function parseJwt (token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+};
