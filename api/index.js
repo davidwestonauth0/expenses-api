@@ -55,8 +55,7 @@ app.post('/login', function(req, res, next) {
    console.log(jwt);
   var decoded = jwt_decode(jwt);
   console.log(decoded);
-  console.log(decoded.email);
-  console.log(decoded.get('email'));
+  var email = decoded.email;
   //var obj = JSON.parse(decoded);
 
 // Accessing individual value from JS object
@@ -67,7 +66,7 @@ app.post('/login', function(req, res, next) {
 //console.log(decoded)
  
 //console.log(decoded);
-    res.redirect(303, 'https://single-page-app-git-master-davidwestonauth0.vercel.app?onetap=true&email=');
+    res.redirect(303, 'https://single-page-app-git-master-davidwestonauth0.vercel.app?onetap=true&email='+email);
 });
 /****************************/
 
