@@ -49,8 +49,8 @@ app.post('/login', function(req, res, next) {
   
     const bodyParser = require('body-parser');
     app.use(bodyParser.urlencoded({ extended: true }));
-    //var jwt = req.body.credential;
-    //console.log(jwt);
+    var jwt = req.body.credential;
+    console.log(jwt);
  
 //var decoded = jwt_decode(jwt);
 //console.log(decoded)
