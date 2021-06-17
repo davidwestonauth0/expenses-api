@@ -1,4 +1,4 @@
-import jwt_decode from "jwt-decode";
+//import jwt_decode from "jwt-decode";
 
 const express = require("express");
 const cors = require("cors");
@@ -49,13 +49,13 @@ app.post('/login', function(req, res, next) {
   
     const bodyParser = require('body-parser');
     app.use(bodyParser.urlencoded({ extended: true }));
-    var jwt = req.body.credential;
-    console.log(jwt);
+    //var jwt = req.body.credential;
+    //console.log(jwt);
  
-var decoded = jwt_decode(jwt);
-console.log(decoded)
+//var decoded = jwt_decode(jwt);
+//console.log(decoded)
  
-console.log(decoded);
+//console.log(decoded);
     res.redirect(303, 'https://single-page-app-git-master-davidwestonauth0.vercel.app?onetap=true&email='+email);
 });
 /****************************/
