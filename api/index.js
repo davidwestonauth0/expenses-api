@@ -1,4 +1,4 @@
-import jwt_decode from "jwt-decode";
+const jwt_decode require"jwt-decode");
 
 const express = require("express");
 const cors = require("cors");
