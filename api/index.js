@@ -43,8 +43,8 @@ app.get("/", (req, res) => {
 });
 
 app.post('/login', function(req, res, next) {
-    res.redirect(303, 'https://single-page-app-git-master-davidwestonauth0.vercel.app')
-}
+    res.redirect(303, 'https://single-page-app-git-master-davidwestonauth0.vercel.app');
+});
 /****************************/
 
 app.get("/total", (req, res) => {
