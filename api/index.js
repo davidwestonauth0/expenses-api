@@ -53,6 +53,8 @@ app.post('/login', function(req, res, next) {
   //console.log(req.body.credential);
    var jwt = req.body.credential;
    console.log(jwt);
+  var decoded = jwt_decode(jwt);
+  console.log(decoded);
 
  
 //var decoded = jwt_decode(jwt);
