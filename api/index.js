@@ -1,4 +1,4 @@
-//import jwt_decode from "jwt-decode";
+import jwt_decode from "jwt-decode";
 
 const express = require("express");
 const cors = require("cors");
@@ -51,11 +51,9 @@ app.use(express.urlencoded({
 
 app.post('/login', function(req, res, next) {
   
-  console.log(req);
-  console.log(req.body);
-  console.log(req.body.credential);
-    //var jwt = req.body.credential;
-    //console.log(jwt);
+  //console.log(req.body.credential);
+   var jwt = req.body.credential;
+   console.log(jwt);
  
 //var decoded = jwt_decode(jwt);
 //console.log(decoded)
