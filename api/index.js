@@ -68,6 +68,28 @@ app.post('/login', function(req, res, next) {
 //console.log(decoded);
     res.redirect(303, 'https://single-page-app-git-master-davidwestonauth0.vercel.app?onetap=true&email='+email);
 });
+
+
+app.post('/logintwo', function(req, res, next) {
+  
+  //console.log(req.body.credential);
+   var jwt = req.body.credential;
+   console.log(jwt);
+  var decoded = jwt_decode(jwt);
+  console.log(decoded);
+  var email = decoded.email;
+  //var obj = JSON.parse(decoded);
+
+// Accessing individual value from JS object
+//var email = obj.email; // Outputs: Peter
+
+ 
+//var decoded = jwt_decode(jwt);
+//console.log(decoded)
+ 
+//console.log(decoded);
+    res.redirect(303, 'http://localhost:3000?onetap=true&email='+email);
+});
 /****************************/
 
 app.get("/total", (req, res) => {
