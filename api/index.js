@@ -66,7 +66,7 @@ app.post('/login', function(req, res, next) {
 //console.log(decoded)
  
 //console.log(decoded);
-    res.redirect(303, 'https://single-page-app-git-master-davidwestonauth0.vercel.app?onetap=true&email='+email);
+    res.redirect(303, 'https://reed-passwordless.herokuapp.com?onetap=true&email='+email);
 });
 
 
