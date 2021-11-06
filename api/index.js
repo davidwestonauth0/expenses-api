@@ -44,7 +44,7 @@ app.get("/", (req, res) => {
   res.status(200).end("OK");
 });
 
-app.post('/get-connections', (req, res) => {
+app.post('/get-connections', function(req, res, next) {
   
    var email = req.body.email;
   
