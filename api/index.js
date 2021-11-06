@@ -44,6 +44,8 @@ app.get("/", (req, res) => {
   res.status(200).end("OK");
 });
 
+app.use(express.json());
+
 app.post('/get-connections', function(req, res, next) {
   console.log(req);
   console.log(req.body);
