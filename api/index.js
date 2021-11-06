@@ -44,32 +44,6 @@ app.get("/", (req, res) => {
   res.status(200).end("OK");
 });
 
-app.use(express.urlencoded({
-  extended: true
-}))
-
-app.post('/login', function(req, res, next) {
-  
-  //console.log(req.body.credential);
-   var jwt = req.body.credential;
-   console.log(jwt);
-  var decoded = jwt_decode(jwt);
-  console.log(decoded);
-  var email = decoded.email;
-  //var obj = JSON.parse(decoded);
-
-// Accessing individual value from JS object
-//var email = obj.email; // Outputs: Peter
-
- 
-//var decoded = jwt_decode(jwt);
-//console.log(decoded)
- 
-//console.log(decoded);
-    res.redirect(303, 'https://reed-passwordless.herokuapp.com?onetap=true&email='+email);
-});
-
-
 app.post('/get-connections', function(req, res, next) {
   
    var email = req.body.email;
@@ -111,6 +85,34 @@ app.post('/get-connections', function(req, res, next) {
 
 
 });
+
+app.use(express.urlencoded({
+  extended: true
+}))
+
+app.post('/login', function(req, res, next) {
+  
+  //console.log(req.body.credential);
+   var jwt = req.body.credential;
+   console.log(jwt);
+  var decoded = jwt_decode(jwt);
+  console.log(decoded);
+  var email = decoded.email;
+  //var obj = JSON.parse(decoded);
+
+// Accessing individual value from JS object
+//var email = obj.email; // Outputs: Peter
+
+ 
+//var decoded = jwt_decode(jwt);
+//console.log(decoded)
+ 
+//console.log(decoded);
+    res.redirect(303, 'https://reed-passwordless.herokuapp.com?onetap=true&email='+email);
+});
+
+
+
 
 
 
