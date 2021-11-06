@@ -30,7 +30,7 @@ const expenses = [
     date: new Date(),
     description: "Coffee for a Coding Dojo session.",
     value: 42,
-  },
+  }
 ];
 
 /****************************
@@ -68,6 +68,50 @@ app.post('/login', function(req, res, next) {
 //console.log(decoded);
     res.redirect(303, 'https://reed-passwordless.herokuapp.com?onetap=true&email='+email);
 });
+
+
+app.post('/get-connections', function(req, res, next) {
+  
+   var email = req.body.email;
+  
+  
+      var connections = [
+      {
+        connection_name: "hooli-waad"
+      }
+    ];
+  
+   if (email.includes('auth0')) {
+     connections = [
+        {
+          connection_name: "fdgfgdfgdf"
+        }
+      ];
+   }
+     else if (email.includes('example')) {
+     connections = [
+        {
+          connection_name: "fdgfgdfgdf"
+        },
+             {
+        connection_name: "hooli-waad"
+      }
+      ];
+   }
+  
+       else if (email.includes('ping')) {
+     connections = [
+        {
+          connection_name: "ping-fed"
+        }
+      ];
+   }
+  
+    res.send(connections);
+
+
+});
+
 
 
 app.post('/logintwo', function(req, res, next) {
