@@ -116,7 +116,26 @@ app.post('/login', function(req, res, next) {
 });
 
 
+app.post('/loginthree', function(req, res, next) {
+  
+  //console.log(req.body.credential);
+   var jwt = req.body.credential;
+   console.log(jwt);
+  var decoded = jwt_decode(jwt);
+  console.log(decoded);
+  var email = decoded.email;
+  //var obj = JSON.parse(decoded);
 
+// Accessing individual value from JS object
+//var email = obj.email; // Outputs: Peter
+
+ 
+//var decoded = jwt_decode(jwt);
+//console.log(decoded)
+ 
+//console.log(decoded);
+    res.redirect(303, 'https://virgin-experience-passwordless.herokuapp.com?onetap=true&email='+email);
+});
 
 
 
